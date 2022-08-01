@@ -32,7 +32,11 @@ const animals = [
 //   <use href="./images/icons.svg#icon-envelope"></use>
 // </svg>;
 
-console.log(animals);
+console.log(document.querySelector('.page-header'));
+
+const { height: pageHeaderHeight } = document.querySelector('.page-header').getBoundingClientRect();
+
+document.body.style.paddingTop = '${pageHeaderHeight}px';
 
 let select = document.createElement('div');
 select.classList.add('collection');

@@ -19,10 +19,10 @@ html {
 }
 
 body {
+    padding-top: 100px;
     height: 100vh;
     width: 100vh;
     margin: 0;
-    padding: 0;
     background: rgb(255, 0, 0);
     background: linear-gradient(
         90deg,
@@ -55,6 +55,8 @@ body {
 .sprites {
     position: absolute;
     bottom: -100%;
+    width: 90%;
+    height: 90%;
     /* overflow: hidden; */
 }
 
@@ -91,8 +93,9 @@ body {
 
 .plitka:hover .sprites {
     animation-name: show-animal;
-    animation-duration: 200ms;
-    animation-timing-function: linear;
+    animation-duration: 800ms;
+    /* animation-timing-function: linear; */
+    animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
     /* animation-delay: 5ms; */
     animation-iteration-count: 2;
     animation-direction: alternate;
@@ -107,6 +110,20 @@ body {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 } */
+
+@keyframes animate30 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
 
 @keyframes show-animal {
     0% {
@@ -158,8 +175,15 @@ body {
 }
 
 #catch {
+    opacity: 0.4;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
     display: flex;
@@ -179,6 +203,6 @@ body {
     animation-timing-function: linear;
     /* animation-delay: 5ms; */
     animation-iteration-count: 2;
-    animation-direction: reverse-alternate;
+    animation-direction: normal;
     /* bottom: 0; */
 }
